@@ -2,29 +2,16 @@ package com.dileep;
 
 import java.time.LocalDate;
 
-public class task {
-    private String name;
-    private String description;
-    private LocalDate date = LocalDate.now();
-
-    public task(String name, String description, status st) {
-        this.name = name;
-        this.description = description;
-        this.st = st;
+class Task {
+    public int getTaskId() {
+        return taskId;
     }
 
-    private status st;
-    public status getSt() {
-        return st;
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
     }
 
-    public void setSt(status st) {
-        this.st = st;
-    }
-
-
-
-
+    private int taskId;
 
     public String getName() {
         return name;
@@ -34,6 +21,8 @@ public class task {
         this.name = name;
     }
 
+    private String name;
+
     public String getDescription() {
         return description;
     }
@@ -41,6 +30,8 @@ public class task {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    private String description;
 
     public LocalDate getDate() {
         return date;
@@ -50,13 +41,33 @@ public class task {
         this.date = date;
     }
 
+    private LocalDate date = LocalDate.now();
+
+    private Status status;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status st) {
+        this.status = st;
+    }
+
+    public Task(int taskId, String name, String description, Status status) {
+        this.taskId = taskId;
+        this.name = name;
+        this.description = description;
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "task{" +
-                "name='" + name + '\'' +
+        return "Task{" +
+                "taskId=" + taskId +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", date=" + date +
-                ", st=" + st +
+                ", status=" + status +
                 '}';
     }
 }

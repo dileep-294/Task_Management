@@ -1,5 +1,5 @@
 package com.dileep;
 
-enum status{
+enum Status{
     Created,InProgress,Done;
 }

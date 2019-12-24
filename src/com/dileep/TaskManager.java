@@ -6,46 +6,48 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class TaskManager {
-    BufferedReader br;
-    TaskManager(){
-        this.br=new BufferedReader(new InputStreamReader(System.in));
+    ArrayList<Task>list=new ArrayList<Task>();
+    public void add(Task task){
+        list.add(task);
     }
-    public task input()throws IOException {
-        System.out.println("Enter Task name");
-        String name=this.br.readLine();
-        System.out.println("Enter task descripton");
-        String description=this.br.readLine();
-        System.out.println("Enter the status of task : \n 1:Created \n 2:InProgress \n 3:Done");
-        String str=br.readLine();
-        task n= new task(name, description, status.valueOf(str));
-        return n;
+
+    public void display(){
+        for(Task task:list) System.out.println(task);
     }
-    public void add(task n, ArrayList<task> li){
-        li.add(n);
-    }
-    public void display(ArrayList<task>li){
-        for(task i:li) System.out.println(i);
-    }
-    public void delete(String name,ArrayList<task>li){
-        for(task i:li){
-            if(i.getName().matches(name)){
-                li.remove(i);
+
+
+    public void delete(int taskId) {
+        for(Task task:list){
+            if(task.getTaskId()==taskId){
+                list.remove(task);
             }
         }
     }
-    public boolean search(String name,ArrayList<task>li){
-        int c=0;
-        for(task i:li){
-            if(i.getName().matches(name)) c = 1;
+
+    public boolean search(int taskId){
+        int flag = 0;
+        for(Task task:list) {
+            if (task.getTaskId()==taskId) flag = 1;
         }
-        if(c==1) return true;
+        if(flag==1) return true;
         else return false;
     }
 
-    public void LIstByStatus(status s, ArrayList<task> li) {
-        for(task i:li){
-            if(i.getSt().equals(s))
-                System.out.println(i);
+    public void  listByStatus(Status status) {
+        for(Task task:list){
+            if(task.getStatus().equals(status))
+                System.out.println(task);
         }
+    }
+
+    public void updateStatus(Status status, int getTaskID){
+                for(Task task:list){
+                    if(task.getTaskId()==getTaskID){
+                        task.setStatus(status);
+                    }
+                }
+    }
+    public int getTotalCount(){
+        return list.size();
     }
 }
