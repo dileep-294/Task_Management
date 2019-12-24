@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="566e9957-ff5c-456b-9eee-b7ae74c366f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dileep/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dileep/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dileep/status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dileep/task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +17,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1VOFe6YEjVTYz58ofF89ATmHPp3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/dileep/task.java" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -87,21 +87,33 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1299.741@67.27.1299.741" timestamp="1577118409071" />
-    <state width="1253" height="2" key="GridCell.Tab.0.bottom" timestamp="1577177342322">
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577182488325">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1577177342322" />
-    <state width="1253" height="2" key="GridCell.Tab.0.center" timestamp="1577177342321">
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1577182488325" />
+    <state width="1253" height="287" key="GridCell.Tab.0.bottom" timestamp="1577190263512">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1577177342321" />
-    <state width="1253" height="2" key="GridCell.Tab.0.left" timestamp="1577177342321">
+    <state width="1253" height="287" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1577190263512" />
+    <state width="1253" height="287" key="GridCell.Tab.0.center" timestamp="1577190263512">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1577177342321" />
-    <state width="1253" height="2" key="GridCell.Tab.0.right" timestamp="1577177342321">
+    <state width="1253" height="287" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1577190263512" />
+    <state width="1253" height="287" key="GridCell.Tab.0.left" timestamp="1577190263511">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1577177342321" />
+    <state width="1253" height="287" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1577190263511" />
+    <state width="1253" height="287" key="GridCell.Tab.0.right" timestamp="1577190263512">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1253" height="287" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1577190263512" />
+    <state x="484" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577190266936">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="484" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1577190266936" />
+    <state x="380" y="175" key="run.anything.popup" timestamp="1577182124831">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1577182124831" />
   </component>
 </project>

@@ -3,51 +3,47 @@ package com.dileep;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.security.IdentityScope;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskManager {
-    ArrayList<Task>list=new ArrayList<Task>();
-    public void add(Task task){
-        list.add(task);
+    int idCounter=1;
+
+   InMemoryTaskRepository repository = new InMemoryTaskRepository();
+
+    public void addTask(String name, String description, Status status){
+        repository.addTask( new Task(idCounter,name,description,status));
+        idCounter+=1;
     }
 
-    public void display(){
-        for(Task task:list) System.out.println(task);
+    public List<Task> display(){
+        List<Task> taskList=repository.display();
+       return taskList;
     }
-
 
     public void delete(int taskId) {
-        for(Task task:list){
-            if(task.getTaskId()==taskId){
-                list.remove(task);
-            }
-        }
+        repository.delete(taskId);
+
     }
 
-    public boolean search(int taskId){
-        int flag = 0;
-        for(Task task:list) {
-            if (task.getTaskId()==taskId) flag = 1;
-        }
-        if(flag==1) return true;
-        else return false;
+    public Task searchByTaskId(int taskId){
+        Task task=repository.searchByTaskId(taskId);
+        return task;
     }
 
-    public void  listByStatus(Status status) {
-        for(Task task:list){
-            if(task.getStatus().equals(status))
-                System.out.println(task);
-        }
+    public List<Task>  listByStatus(Status status) {
+        List<Task> taskList=repository.listByStatus(status);
+        return taskList;
     }
 
-    public void updateStatus(Status status, int getTaskID){
-                for(Task task:list){
-                    if(task.getTaskId()==getTaskID){
-                        task.setStatus(status);
-                    }
-                }
+    public void updateStatus(Status status, int taskId){
+        repository.updateStatus(status,taskId);
+
     }
+
     public int getTotalCount(){
-        return list.size();
+        int taskCount=repository.getTotalCount();
+        return taskCount;
     }
 }

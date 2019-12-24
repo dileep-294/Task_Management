@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -13,11 +14,9 @@ public class Main {
 
         TaskManager c = new TaskManager();
 
-
-        int idCount=1;
         while(true){
-            System.out.print("------------\nMenu\n1.Add\n2.Display\n3.Delete\n4.Search\n" +
-                                           "5.ListByStatus\n6:updateStatus\n7:totalTasks\n" +
+            System.out.print("------------\nMenu\n1.Add\n2.Display\n3.Delete\n4.SearchByTaskId\n" +
+                                           "5.ListByStatus\n6:updateStatus\n7:TotalTasks\n" +
                                             "8:Exit\n");
             System.out.println("Enter choice:");
             int menuId=Integer.parseInt(br.readLine());
@@ -29,14 +28,15 @@ public class Main {
                 String description=br.readLine();
                 System.out.println("Enter the status of task : \n 1:Created \n 2:InProgress \n 3:Done");
                 String status=br.readLine();
-                Task task= new Task(idCount, name, description, Status.valueOf(status));
-                c.add(task);
-                idCount+=1;
+                //Task task= new Task(idCount, name, description, Status.valueOf(status));
+                c.addTask(name, description, Status.valueOf(status));
             }
 
-
             else if(menuId == 2){
-                c.display();
+                List<Task> taskList = (List<Task>) c.display();
+                for(Object task:taskList){
+                    System.out.println(task);
+                }
             }
 
             else if(menuId == 3){
@@ -47,18 +47,22 @@ public class Main {
 
             else if(menuId == 4){
                 System.out.println("Enter TaskId name to search:");
-                if(c.search(Integer.parseInt(br.readLine()))) {
-                    System.out.println("Data Found");
-                }
-                    else{
-                     System.out.println("No data found");
-                    }
+                Task task=c.searchByTaskId(Integer.parseInt(br.readLine()));
+                System.out.println(task);
                 }
 
             else if(menuId == 5){
                 System.out.println("Enter the status:");
                 String status=br.readLine();
-                c.listByStatus(Status.valueOf(status));
+                List<Task> taskList=c.listByStatus(Status.valueOf(status));
+                if(taskList.size()==0){
+                    System.out.println("No Tasks Found related to your search");
+                }
+                else{
+                    for(Object task : taskList){
+                        System.out.println(task);
+                    }
+                }
             }
 
             else if(menuId == 6){
@@ -75,6 +79,7 @@ public class Main {
             }
 
             else if(menuId == 8) System.exit(0);
+
             }
 
         }
