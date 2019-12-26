@@ -4,17 +4,23 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.IdentityScope;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
+import java.util.Random;
 
 public class TaskManager {
-    int idCounter=1;
+    //int idCounter=1;
 
-   InMemoryTaskRepository repository = new InMemoryTaskRepository();
+   TaskRepository repository = new TaskFileRepository();
 
-    public void addTask(String name, String description, Status status){
-        repository.addTask( new Task(idCounter,name,description,status));
-        idCounter+=1;
+    public void addTask(String name, String description, Status status,Date date)
+   {
+       Random random = new Random();
+
+        repository.addTask( new Task(random.nextInt(1000),name,description, date, status));
+       //idCounter+=1;
     }
 
     public List<Task> display(){
@@ -23,6 +29,7 @@ public class TaskManager {
     }
 
     public void delete(int taskId) {
+        System.out.println("Enter to taskmanager");
         repository.delete(taskId);
 
     }
@@ -45,5 +52,13 @@ public class TaskManager {
     public int getTotalCount(){
         int taskCount=repository.getTotalCount();
         return taskCount;
+    }
+
+    public List<Task> getPendingTasks() {
+        return repository.getPendingTasks();
+    }
+
+    public List<Task> getTodaysTasks() {
+        return repository.getTodaysTasks();
     }
 }

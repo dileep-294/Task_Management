@@ -1,5 +1,7 @@
 package com.dileep;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public interface TaskRepository {
@@ -16,4 +18,8 @@ public interface TaskRepository {
     void updateStatus(Status status, int taskId);
 
     int getTotalCount();
+
+    List<Task> getPendingTasks();
+
+    List<Task> getTodaysTasks();
 }

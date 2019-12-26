@@ -1,10 +1,14 @@
 package com.dileep;
 
-import java.time.LocalDate;
+import java.util.Date;
 
-class Task {
+class Task implements Comparable<Task> {
     public int getTaskId() {
         return taskId;
+    }
+
+    public Task(){
+
     }
 
     public void setTaskId(int taskId) {
@@ -33,15 +37,16 @@ class Task {
 
     private String description;
 
-    public LocalDate getDate() {
-        return date;
+
+    public Date getDueDate() {
+        return dueDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
 
-    private LocalDate date = LocalDate.now();
+    private Date dueDate;
 
     private Status status;
 
@@ -53,11 +58,13 @@ class Task {
         this.status = st;
     }
 
-    public Task(int taskId, String name, String description, Status status) {
+    public Task(int taskId, String name, String description, Date date, Status status) {
         this.taskId = taskId;
         this.name = name;
         this.description = description;
         this.status = status;
+        this.dueDate = date;
+
     }
 
     @Override
@@ -66,8 +73,15 @@ class Task {
                 "taskId=" + taskId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", date=" + date +
                 ", status=" + status +
+                ", date=" + dueDate +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Task task) {
+        if(this.getDueDate().compareTo(task.getDueDate())==0) return 0;
+        else if(this.getDueDate().compareTo(getDueDate())<0) return -1;
+        else return 1;
     }
 }

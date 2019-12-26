@@ -1,23 +1,28 @@
 
 package com.dileep;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args)throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
 
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 
-        TaskManager c = new TaskManager();
+        TaskManager taskManager = new TaskManager();
 
         while(true){
             System.out.print("------------\nMenu\n1.Add\n2.Display\n3.Delete\n4.SearchByTaskId\n" +
                                            "5.ListByStatus\n6:updateStatus\n7:TotalTasks\n" +
-                                            "8:Exit\n");
+                                            "8:getPendingTasks\n9:Exit\n");
             System.out.println("Enter choice:");
             int menuId=Integer.parseInt(br.readLine());
 
@@ -28,33 +33,33 @@ public class Main {
                 String description=br.readLine();
                 System.out.println("Enter the status of task : \n 1:Created \n 2:InProgress \n 3:Done");
                 String status=br.readLine();
+                System.out.println("Enter the due date:");
+                Date dueDate = new SimpleDateFormat("yyyy-MM-dd").parse(br.readLine());
                 //Task task= new Task(idCount, name, description, Status.valueOf(status));
-                c.addTask(name, description, Status.valueOf(status));
+                taskManager.addTask(name, description, Status.valueOf(status), dueDate);
             }
 
             else if(menuId == 2){
-                List<Task> taskList = (List<Task>) c.display();
-                for(Object task:taskList){
-                    System.out.println(task);
-                }
+                List<Task> taskList = taskManager.display();
+                for(Task task:taskList) System.out.println(task);
             }
 
             else if(menuId == 3){
                 System.out.println("Enter taskId to Delete :");
                 int taskId=Integer.parseInt(br.readLine());
-                c.delete(taskId);
+                taskManager.delete(taskId);
             }
 
             else if(menuId == 4){
                 System.out.println("Enter TaskId name to search:");
-                Task task=c.searchByTaskId(Integer.parseInt(br.readLine()));
+                Task task=taskManager.searchByTaskId(Integer.parseInt(br.readLine()));
                 System.out.println(task);
                 }
 
             else if(menuId == 5){
                 System.out.println("Enter the status:");
                 String status=br.readLine();
-                List<Task> taskList=c.listByStatus(Status.valueOf(status));
+                List<Task> taskList=taskManager.listByStatus(Status.valueOf(status));
                 if(taskList.size()==0){
                     System.out.println("No Tasks Found related to your search");
                 }
@@ -70,15 +75,32 @@ public class Main {
                 int getTaskID=Integer.parseInt(br.readLine());
                 System.out.println("Enter status to Update");
                 String status=br.readLine();
-                c.updateStatus(Status.valueOf(status), getTaskID);
+                taskManager.updateStatus(Status.valueOf(status), getTaskID);
 
             }
 
             else if(menuId == 7){
-                System.out.println("Total number of Tasks:"+c.getTotalCount());
+                System.out.println("Total number of Tasks:"+taskManager.getTotalCount());
             }
 
-            else if(menuId == 8) System.exit(0);
+            else if(menuId==8){
+                System.out.println("Search by status InProgress or Created");
+                List<Task> taskList = taskManager.getPendingTasks();
+                for(Task task : taskList){
+                    System.out.println(task);
+                }
+            }
+
+            else if(menuId==9){
+                List<Task> taskList = taskManager.getTodaysTasks();
+                if(taskList.size()==0){
+                    System.out.println("No data Found Related To Your Search");
+                }
+                else{
+                    for(Task task : taskList) System.out.println(task);
+                }
+            }
+            else if(menuId == 10) System.exit(0);
 
             }
 
