@@ -68,7 +68,7 @@ public class TaskFileRepository  implements TaskRepository{
 
             }
             tasks.remove(task1);
-            writeToFile(tasks);
+            //writeToFile(tasks);
 
         } catch (Exception e) {
             e.printStackTrace();

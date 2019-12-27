@@ -1,22 +1,19 @@
 package com.dileep;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.security.IdentityScope;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class TaskManager {
     //int idCounter=1;
 
-   TaskRepository repository = new TaskFileRepository();
+   TaskRepository repository = new TaskDataBase();
 
-    public void addTask(String name, String description, Status status,Date date)
-   {
+    public TaskManager() throws SQLException {
+    }
+
+    public void addTask(String name, String description, Status status,Date date) throws SQLException {
        Random random = new Random();
 
         repository.addTask( new Task(random.nextInt(1000),name,description, date, status));
@@ -24,24 +21,20 @@ public class TaskManager {
     }
 
     public List<Task> display(){
-        List<Task> taskList=repository.display();
-       return taskList;
+        return repository.display();
     }
 
     public void delete(int taskId) {
-        System.out.println("Enter to taskmanager");
         repository.delete(taskId);
 
     }
 
-    public Task searchByTaskId(int taskId){
-        Task task=repository.searchByTaskId(taskId);
-        return task;
+    public Task searchByTaskId(int taskId) {
+        return repository.searchByTaskId(taskId);
     }
 
     public List<Task>  listByStatus(Status status) {
-        List<Task> taskList=repository.listByStatus(status);
-        return taskList;
+        return repository.listByStatus(status);
     }
 
     public void updateStatus(Status status, int taskId){
@@ -50,8 +43,7 @@ public class TaskManager {
     }
 
     public int getTotalCount(){
-        int taskCount=repository.getTotalCount();
-        return taskCount;
+        return repository.getTotalCount();
     }
 
     public List<Task> getPendingTasks() {

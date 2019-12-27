@@ -4,6 +4,7 @@ package com.dileep;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws IOException, ParseException, SQLException {
 
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 
@@ -22,7 +23,7 @@ public class Main {
         while(true){
             System.out.print("------------\nMenu\n1.Add\n2.Display\n3.Delete\n4.SearchByTaskId\n" +
                                            "5.ListByStatus\n6:updateStatus\n7:TotalTasks\n" +
-                                            "8:getPendingTasks\n9:Exit\n");
+                                            "8:getPendingTasks\n9:todaysTasks\n10:Exit\n");
             System.out.println("Enter choice:");
             int menuId=Integer.parseInt(br.readLine());
 

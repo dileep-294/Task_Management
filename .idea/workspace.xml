@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="566e9957-ff5c-456b-9eee-b7ae74c366f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/dileep/TASKS.JSON" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/dileep/TaskDataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TASK_Management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TASK_Management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/InMemoryTaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/InMemoryTaskRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TASKS.JSON" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TASKS.JSON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskFileRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskFileRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TASK_Management/com/dileep/TaskRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dileep/InMemoryTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/InMemoryTaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dileep/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dileep/TASKS.JSON" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/TASKS.JSON" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/dileep/TaskFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/TaskFileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dileep/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/TaskManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/dileep/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/dileep/task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/dileep/task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jackson-databind-2.10.1.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.17.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -101,10 +100,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="524" y="115" width="548" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1577347816076">
+    <state x="524" y="115" width="548" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1577365284690">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="524" y="115" width="548" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1577347816076" />
+    <state x="524" y="115" width="548" height="562" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1577365284690" />
     <state x="544" y="111" width="324" height="572" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1577289476231">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -121,34 +120,38 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="449" y="145" width="524" height="502" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/67.27.1299.741@67.27.1299.741" timestamp="1577337995164" />
-    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577289445573">
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577360246630">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1577289445573" />
-    <state width="1253" height="251" key="GridCell.Tab.0.bottom" timestamp="1577354661069">
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1577360246630" />
+    <state width="1253" height="560" key="GridCell.Tab.0.bottom" timestamp="1577442481966">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="251" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1577354661069" />
-    <state width="1253" height="251" key="GridCell.Tab.0.center" timestamp="1577354661067">
+    <state width="1253" height="560" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1577442481966" />
+    <state width="1253" height="560" key="GridCell.Tab.0.center" timestamp="1577442481966">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="251" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1577354661067" />
-    <state width="1253" height="251" key="GridCell.Tab.0.left" timestamp="1577354661067">
+    <state width="1253" height="560" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1577442481966" />
+    <state width="1253" height="560" key="GridCell.Tab.0.left" timestamp="1577442481965">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="251" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1577354661067" />
-    <state width="1253" height="251" key="GridCell.Tab.0.right" timestamp="1577354661068">
+    <state width="1253" height="560" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1577442481965" />
+    <state width="1253" height="560" key="GridCell.Tab.0.right" timestamp="1577442481966">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="251" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1577354661068" />
-    <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1577289491967">
+    <state width="1253" height="560" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1577442481966" />
+    <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1577360392032">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1577289491967" />
+    <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1577360392032" />
     <state x="484" y="316" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1577339557128">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="484" y="316" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1577339557128" />
+    <state x="67" y="27" width="710" height="741" key="find.popup" timestamp="1577365754924">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="67" y="27" width="710" height="741" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1577365754924" />
     <state x="461" y="27" width="500" height="741" key="refactoring.ChangeSignatureDialog" timestamp="1577351701995">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
